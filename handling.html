@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>取扱いについて | URURIA</title>
+<meta name="description" content="URURIA化粧品のサロン仕入価格・ご注文方法のご案内。サロンオーナー様向け取扱い情報。">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Outfit:wght@200;300&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white: #FFFFFF;
+  --off-white: #FAFAFE;
+  --lavender-bg: #F5F3FF;
+  --aurora-purple: #9B7DC0;
+  --aurora-pink: #D878B0;
+  --aurora-blue: #7ABCD8;
+  --mid-purple: #7B6BA8;
+  --soft-pink: #E8A0C8;
+  --light-lavender: #C8B8E8;
+  --text-dark: #2D2540;
+  --text-mid: #5A4A70;
+  --text-light: #9A8AB0;
+  --border-light: rgba(200, 184, 232, 0.25);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--off-white);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ===== Navigation ===== */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--mid-purple);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-mid);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--aurora-purple);
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--aurora-purple), var(--aurora-pink));
+  border-radius: 1px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+
+/* ===== Page Header ===== */
+.page-header {
+  background: linear-gradient(170deg, #F5F3FF 0%, #F0ECF9 50%, #FDF0F7 100%);
+  padding: 48px 24px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(ellipse, rgba(155,125,192,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-header-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--mid-purple);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.2s ease forwards;
+}
+.page-header-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.05em;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.4s ease forwards;
+}
+
+/* ===== Section Styles ===== */
+section { padding: 48px 24px; }
+
+.eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--mid-purple);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.sec-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  letter-spacing: 0.03em;
+}
+.a-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--aurora-purple), var(--aurora-pink));
+  margin: 0 auto 32px;
+}
+
+/* ===== Price Card ===== */
+.price-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 16px rgba(150, 120, 210, 0.06);
+  border: 1px solid var(--border-light);
+  margin-bottom: 12px;
+}
+.price-card-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.price-card-note {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.price-label {
+  font-size: 11px;
+  color: var(--text-mid);
+  letter-spacing: 0.03em;
+}
+.price-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  background: linear-gradient(135deg, var(--aurora-purple), var(--aurora-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.price-value-sub {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  color: var(--text-light);
+}
+.price-tax {
+  font-size: 10px;
+  color: var(--text-light);
+  text-align: right;
+  margin-top: 2px;
+}
+
+/* ===== Pricing Section ===== */
+.pricing-section {
+  background: var(--lavender-bg);
+}
+.pricing-section-white {
+  background: var(--white);
+}
+
+/* ===== Min Order Banner ===== */
+.min-order {
+  background: linear-gradient(135deg, rgba(155,125,192,0.08), rgba(216,120,176,0.08));
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.min-order-label {
+  font-size: 12px;
+  color: var(--text-mid);
+  margin-bottom: 8px;
+}
+.min-order-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  background: linear-gradient(135deg, var(--aurora-purple), var(--aurora-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.min-order-unit {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  -webkit-text-fill-color: var(--text-mid);
+}
+.min-order-note {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+/* ===== Dark Section ===== */
+.dark-section {
+  background: linear-gradient(160deg, #1A1228 0%, #2D1B3D 50%, #1A1228 100%);
+  color: white;
+}
+.dark-section .eyebrow { color: rgba(255,255,255,0.5); }
+.dark-section .sec-title { color: white; }
+
+/* ===== Order Flow ===== */
+.order-flow {
+  margin-bottom: 32px;
+}
+.order-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  position: relative;
+}
+.order-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 42px;
+  bottom: -16px;
+  width: 1px;
+  background: rgba(155,125,192,0.3);
+}
+.order-step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--aurora-purple), var(--aurora-pink));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+  flex-shrink: 0;
+}
+.order-step-content {
+  padding-top: 4px;
+}
+.order-step-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+.order-step-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+}
+
+/* ===== LINE CTA ===== */
+.line-cta {
+  text-align: center;
+  margin-top: 8px;
+}
+.line-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: #06C755;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 50px;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s;
+}
+.line-btn:hover {
+  opacity: 0.9;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: linear-gradient(160deg, #1A1228 0%, #2D1B3D 50%, #1A1228 100%);
+  padding: 48px 24px 32px;
+  text-align: center;
+  color: white;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 28px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+.footer-tagline {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.15em;
+  margin-bottom: 24px;
+}
+.footer-copy {
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">URURIA</a>
+    <div class="nav-links">
+      <a href="index.html">トップ</a>
+      <a href="handling.html" class="active">取扱いについて</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<div class="page-header">
+  <p class="page-header-eyebrow">For Salon Owners</p>
+  <h1 class="page-header-title">取扱いについて</h1>
+</div>
+
+<!-- 取扱い条件 -->
+<section class="pricing-section-white" style="padding-bottom:32px;">
+  <p class="eyebrow fade-in">Requirements</p>
+  <h2 class="sec-title fade-in">取扱い条件</h2>
+  <div class="fade-in" style="font-size:13px;line-height:2.2;color:var(--text-mid);">
+    <p style="margin-bottom:20px;">初回のお仕入れは、最低注文金額 <strong style="color:var(--text-dark);">&yen;300,000（税抜）</strong>からとなります。送料は別途ご請求いたします。</p>
+    <p style="margin-bottom:20px;">一括でのお仕入れは初回のみです。2回目以降は1点からご発注いただけます。</p>
+    <p>詳しい内容につきましては、代表の髙橋より直接勉強会にてご案内が可能です。個別Zoomでのご対応も承っております。</p>
+  </div>
+</section>
+
+<!-- Professional Products Pricing -->
+<section class="pricing-section">
+  <p class="eyebrow fade-in">Professional</p>
+  <h2 class="sec-title fade-in">施術用化粧品 サロン仕入価格</h2>
+
+  <div class="price-card fade-in stagger-1">
+    <p class="price-card-name">アンプルマニア リフト</p>
+    <p class="price-card-note">1箱10本入り（約30名施術相当）</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;36,000</span>
+    </div>
+    <p class="price-tax">税込 &yen;39,600</p>
+  </div>
+
+  <div class="price-card fade-in stagger-2">
+    <p class="price-card-name">アンプルマニア ホワイト</p>
+    <p class="price-card-note">1箱10本入り（約30名施術相当）</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;36,000</span>
+    </div>
+    <p class="price-tax">税込 &yen;39,600</p>
+  </div>
+
+  <div class="price-card fade-in stagger-3">
+    <p class="price-card-name">アンプルマニア スージング</p>
+    <p class="price-card-note">1箱10本入り（約30名施術相当）</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;36,000</span>
+    </div>
+    <p class="price-tax">税込 &yen;39,600</p>
+  </div>
+
+  <div class="price-card fade-in">
+    <p class="price-card-name">アンプルマニアアソート</p>
+    <p class="price-card-note">リフトアンプル・スージングアンプル・ホワイトアンプル<br>10ml×各種3本　計9本入り</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;36,000</span>
+    </div>
+    <p class="price-tax">税込 &yen;39,600</p>
+  </div>
+
+  <div class="price-card fade-in">
+    <p class="price-card-name">ソフトニングウォーター</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;16,000</span>
+    </div>
+    <p class="price-tax">税込 &yen;17,600</p>
+  </div>
+
+  <div class="price-card fade-in">
+    <p class="price-card-name">ベイビーエクソ BABY-EXO</p>
+    <p class="price-card-note">1箱3本入り（約9名施術相当）</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;16,500</span>
+    </div>
+    <p class="price-tax">税込 &yen;18,150</p>
+  </div>
+
+  <div class="price-card fade-in">
+    <p class="price-card-name">バイオセルロースパック</p>
+    <p class="price-card-note">1袋個包装10枚入り</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;24,000</span>
+    </div>
+    <p class="price-tax">税込 &yen;26,400</p>
+  </div>
+
+</section>
+
+<!-- Home Care Products Pricing -->
+<section class="pricing-section-white">
+  <p class="eyebrow fade-in">Home Care</p>
+  <h2 class="sec-title fade-in">ホームケア化粧品 サロン仕入価格</h2>
+
+  <div class="price-card fade-in stagger-1">
+    <p class="price-card-name">BABY-EXOフェイスパック</p>
+    <p class="price-card-note">1袋個包装10枚入り</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;8,260</span>
+    </div>
+    <div class="price-row">
+      <span class="price-label">店頭販売価格（税抜）</span>
+      <span class="price-value-sub">&yen;11,800</span>
+    </div>
+    <p class="price-tax">税込 &yen;9,086 / 店頭 &yen;12,980</p>
+  </div>
+
+  <div class="price-card fade-in stagger-2">
+    <p class="price-card-name">アンプルマニアHOME リフト</p>
+    <p class="price-card-note">1箱（アンプル1本＋ベイビーエクソ1本）</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;8,400</span>
+    </div>
+    <div class="price-row">
+      <span class="price-label">店頭販売価格（税抜）</span>
+      <span class="price-value-sub">&yen;12,000</span>
+    </div>
+    <p class="price-tax">税込 &yen;9,240 / 店頭 &yen;13,200</p>
+  </div>
+
+  <div class="price-card fade-in stagger-3">
+    <p class="price-card-name">アンプルマニアHOME ホワイト</p>
+    <p class="price-card-note">1箱（アンプル1本＋ベイビーエクソ1本）</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;8,400</span>
+    </div>
+    <div class="price-row">
+      <span class="price-label">店頭販売価格（税抜）</span>
+      <span class="price-value-sub">&yen;12,000</span>
+    </div>
+    <p class="price-tax">税込 &yen;9,240 / 店頭 &yen;13,200</p>
+  </div>
+
+  <div class="price-card fade-in stagger-4">
+    <p class="price-card-name">アンプルマニアHOME スージング</p>
+    <p class="price-card-note">1箱（アンプル1本＋ベイビーエクソ1本）</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;8,400</span>
+    </div>
+    <div class="price-row">
+      <span class="price-label">店頭販売価格（税抜）</span>
+      <span class="price-value-sub">&yen;12,000</span>
+    </div>
+    <p class="price-tax">税込 &yen;9,240 / 店頭 &yen;13,200</p>
+  </div>
+
+  <div class="price-card fade-in">
+    <p class="price-card-name">スーパーリカバリーセラム</p>
+    <p class="price-card-note">内容量：33ml</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;8,260</span>
+    </div>
+    <div class="price-row">
+      <span class="price-label">店頭販売価格（税抜）</span>
+      <span class="price-value-sub">&yen;11,800</span>
+    </div>
+    <p class="price-tax">税込 &yen;9,086 / 店頭 &yen;12,980</p>
+  </div>
+
+  <div class="price-card fade-in">
+    <p class="price-card-name">LIP PLUMPER</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;5,040</span>
+    </div>
+    <div class="price-row">
+      <span class="price-label">店頭販売価格（税抜）</span>
+      <span class="price-value-sub">&yen;6,300</span>
+    </div>
+    <p class="price-tax">税込 &yen;5,544 / 店頭 &yen;6,930</p>
+  </div>
+
+  <div class="price-card fade-in">
+    <p class="price-card-name">LIP BALM</p>
+    <div class="price-row">
+      <span class="price-label">サロン仕入価格（税抜）</span>
+      <span class="price-value">&yen;3,600</span>
+    </div>
+    <div class="price-row">
+      <span class="price-label">店頭販売価格（税抜）</span>
+      <span class="price-value-sub">&yen;4,500</span>
+    </div>
+    <p class="price-tax">税込 &yen;3,960 / 店頭 &yen;4,950</p>
+  </div>
+</section>
+
+<!-- How to Order -->
+<section class="dark-section">
+  <p class="eyebrow fade-in">How to Order</p>
+  <h2 class="sec-title fade-in">ご注文方法</h2>
+
+  <div class="order-flow fade-in">
+    <div class="order-step">
+      <div class="order-step-num">1</div>
+      <div class="order-step-content">
+        <p class="order-step-title">URURIA公式LINEに登録</p>
+        <p class="order-step-desc">下記ボタンから公式LINEを<br>友だち追加してください。</p>
+      </div>
+    </div>
+    <div class="order-step">
+      <div class="order-step-num">2</div>
+      <div class="order-step-content">
+        <p class="order-step-title">「導入相談」と一言送る</p>
+        <p class="order-step-desc">メッセージを送っていただければ<br>担当者がご案内いたします。</p>
+      </div>
+    </div>
+    <div class="order-step">
+      <div class="order-step-num">3</div>
+      <div class="order-step-content">
+        <p class="order-step-title">初回注文</p>
+        <p class="order-step-desc">ご希望の商品・数量を<br>お伝えいただき、ご注文確定となります。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="line-cta fade-in">
+    <a href="https://lin.ee/NoAhZzH" target="_blank" rel="noopener" class="line-btn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      URURIA公式LINE
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p class="footer-logo">URURIA</p>
+  <p class="footer-tagline">100年使う肌を育てる</p>
+  <p class="footer-copy">&copy; 2026 URURIA. All rights reserved.</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
